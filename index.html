@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nullzair.in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #050505;
+      color: #f0f0f0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      position: relative;
+    }
+
+    /* subtle radial glow */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(700px, 90vw);
+      height: min(700px, 90vw);
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .brand {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .brand .null {
+      color: #fff;
+    }
+
+    .brand .zair {
+      color: #555;
+    }
+
+    .brand .dot {
+      color: #333;
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-weight: 300;
+      color: #666;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #333;
+      margin: 0 auto 2.5rem;
+    }
+
+    .email {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(0.85rem, 2vw, 1rem);
+      color: #999;
+      text-decoration: none;
+      padding: 0.6em 1.4em;
+      border: 1px solid #222;
+      border-radius: 6px;
+      transition: color 0.3s, border-color 0.3s, background 0.3s;
+    }
+
+    .email:hover,
+    .email:focus-visible {
+      color: #fff;
+      border-color: #555;
+      background: rgba(255,255,255,0.04);
+      outline: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .hero {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .tagline {
+        letter-spacing: 0.02em;
+        margin-bottom: 2rem;
+      }
+
+      .divider {
+        margin-bottom: 2rem;
+      }
+
+      .email {
+        padding: 0.5em 1.2em;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .tagline {
+        letter-spacing: 0.08em;
+      }
+    }
+
+    /* Game styles */
+    .game-toggle {
+      display: block;
+      margin: 2rem auto 0;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .game-toggle:hover {
+      color: #666;
+    }
+
+    .game-wrap {
+      margin-top: 1.5rem;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .game-wrap.active {
+      display: flex;
+    }
+
+    .math-stats {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      color: #444;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .math-question {
+      font-family: 'Space Mono', monospace;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      color: #ccc;
+      letter-spacing: 0.02em;
+    }
+
+    .math-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .math-options button {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.1rem;
+      padding: 0.7em 1em;
+      background: #0e0e0e;
+      border: 1px solid #1a1a1a;
+      border-radius: 6px;
+      color: #888;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .math-options button:hover {
+      border-color: #444;
+      color: #fff;
+      background: #151515;
+    }
+
+    .math-options button.correct {
+      border-color: #2a5a2a;
+      background: #0f1f0f;
+      color: #5a5;
+    }
+
+    .math-options button.wrong {
+      border-color: #5a2a2a;
+      background: #1f0f0f;
+      color: #a55;
+    }
+
+    .math-feedback {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      height: 1.2em;
+      color: #444;
+    }
+
+    .math-timer {
+      width: 100%;
+      max-width: 280px;
+      height: 3px;
+      background: #111;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .math-timer-bar {
+      height: 100%;
+      background: #333;
+      border-radius: 2px;
+      transition: width 0.1s linear;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1 class="brand"><span class="null">null</span><span class="zair">zair</span><span class="dot">.</span></h1>
+    <p class="tagline">Something is brewing</p>
+    <div class="divider"></div>
+    <a class="email" href="mailto:msg@nullzair.in">msg@nullzair.in</a>
+
+    <button class="game-toggle" id="gameToggle">&#9654; quick math</button>
+
+    <div class="game-wrap" id="gameWrap">
+      <div class="math-stats">
+        <span>score: <span id="score">0</span></span>
+        <span>streak: <span id="streak">0</span></span>
+      </div>
+      <div class="math-timer"><div class="math-timer-bar" id="timerBar"></div></div>
+      <div class="math-question" id="question">—</div>
+      <div class="math-options" id="options"></div>
+      <div class="math-feedback" id="feedback">&nbsp;</div>
+    </div>
+  </section>
+
+  <script>
+  (() => {
+    const toggle = document.getElementById('gameToggle');
+    const wrap = document.getElementById('gameWrap');
+    const questionEl = document.getElementById('question');
+    const optionsEl = document.getElementById('options');
+    const scoreEl = document.getElementById('score');
+    const streakEl = document.getElementById('streak');
+    const feedbackEl = document.getElementById('feedback');
+    const timerBar = document.getElementById('timerBar');
+
+    let score = 0, streak = 0, best = 0, answer, timer, timerStart, timerDuration = 6000, raf;
+    const ops = ['+', '−', '×'];
+
+    function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    function newRound() {
+      const op = ops[rand(0, 2)];
+      let a, b, correct;
+
+      if (op === '+') {
+        a = rand(2, 50); b = rand(2, 50); correct = a + b;
+      } else if (op === '−') {
+        a = rand(10, 60); b = rand(2, a - 1); correct = a - b;
+      } else {
+        a = rand(2, 12); b = rand(2, 12); correct = a * b;
+      }
+
+      answer = correct;
+      questionEl.textContent = `${a} ${op} ${b} = ?`;
+
+      // generate 4 options with one correct
+      const choices = new Set([correct]);
+      while (choices.size < 4) {
+        const off = rand(1, 10) * (Math.random() < 0.5 ? -1 : 1);
+        const fake = correct + off;
+        if (fake > 0) choices.add(fake);
+      }
+
+      const shuffled = [...choices].sort(() => Math.random() - 0.5);
+      optionsEl.innerHTML = '';
+      shuffled.forEach(val => {
+        const btn = document.createElement('button');
+        btn.textContent = val;
+        btn.addEventListener('click', () => pick(val, btn));
+        optionsEl.appendChild(btn);
+      });
+
+      feedbackEl.innerHTML = '&nbsp;';
+      startTimer();
+    }
+
+    function startTimer() {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+      timerStart = Date.now();
+      timerBar.style.width = '100%';
+
+      function tick() {
+        const elapsed = Date.now() - timerStart;
+        const pct = Math.max(0, 1 - elapsed / timerDuration) * 100;
+        timerBar.style.width = pct + '%';
+        if (pct > 0) raf = requestAnimationFrame(tick);
+      }
+      raf = requestAnimationFrame(tick);
+
+      timer = setTimeout(() => {
+        streak = 0;
+        streakEl.textContent = streak;
+        feedbackEl.textContent = `time\'s up! it was ${answer}`;
+        disableButtons();
+        setTimeout(newRound, 1200);
+      }, timerDuration);
+    }
+
+    function pick(val, btn) {
+      clearTimeout(timer);
+      cancelAnimationFrame(raf);
+      disableButtons();
+
+      if (val === answer) {
+        btn.classList.add('correct');
+        streak++;
+        score += (1 + Math.floor(streak / 3));
+        feedbackEl.textContent = streak > 1 ? `nice! ${streak} streak 🔥` : 'correct ✓';
+      } else {
+        btn.classList.add('wrong');
+        // highlight correct
+        [...optionsEl.children].forEach(b => {
+          if (parseInt(b.textContent) === answer) b.classList.add('correct');
+        });
+        streak = 0;
+        feedbackEl.textContent = `nope, it was ${answer}`;
+      }
+
+      scoreEl.textContent = score;
+      streakEl.textContent = streak;
+      setTimeout(newRound, 1000);
+    }
+
+    function disableButtons() {
+      [...optionsEl.children].forEach(b => b.disabled = true);
+    }
+
+    // toggle game
+    toggle.addEventListener('click', () => {
+      const active = wrap.classList.toggle('active');
+      if (active) {
+        toggle.innerHTML = '&#9632; close game';
+        score = 0; streak = 0;
+        scoreEl.textContent = 0;
+        streakEl.textContent = 0;
+        newRound();
+      } else {
+        toggle.innerHTML = '&#9654; quick math';
+        clearTimeout(timer);
+        cancelAnimationFrame(raf);
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
