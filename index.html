@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nullzair.in</title>
+  <meta
+    name="description"
+    content="nullzair.in home page and deep-link landing page."
+  >
+  <meta name="theme-color" content="#050505">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="canonical" id="canonicalLink" href="https://nullzair.in/">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body data-page="home">
+  <main class="shell">
+    <section class="view hero" id="homeView">
+      <h1 class="brand">
+        <span class="null">null</span><span class="zair">zair</span><span class="dot">.</span>
+      </h1>
+      <p class="tagline">Something is brewing</p>
+      <div class="divider"></div>
+      <a class="email" href="mailto:msg@nullzair.in">msg@nullzair.in</a>
+
+      <button class="game-toggle" id="gameToggle" type="button">&#9654; quick math</button>
+
+      <div class="game-wrap" id="gameWrap">
+        <div class="math-stats">
+          <span>score: <span id="score">0</span></span>
+          <span>streak: <span id="streak">0</span></span>
+        </div>
+        <div class="math-timer">
+          <div class="math-timer-bar" id="timerBar"></div>
+        </div>
+        <div class="math-question" id="question">-</div>
+        <div class="math-options" id="options"></div>
+        <div class="math-feedback" id="feedback">&nbsp;</div>
+      </div>
+    </section>
+
+    <section class="view link-view" id="deepLinkView" hidden>
+      <div class="link-card">
+        <p class="eyebrow" id="linkEyebrow">App link</p>
+        <h1 class="link-title" id="linkTitle">Open in the mobile app</h1>
+        <p class="link-copy" id="linkCopy">
+          Trying to open the app now. If nothing happens, use the button below.
+        </p>
+
+        <div class="link-meta">
+          <span class="meta-label" id="metaLabel">Item ID</span>
+          <code class="meta-value" id="metaValue">-</code>
+        </div>
+
+        <div class="actions">
+          <a class="action primary" id="openAppLink" href="/">Open app</a>
+          <button class="action secondary" id="copyLinkButton" type="button">Copy link</button>
+          <a class="action ghost" id="storeLink" href="#" hidden>Get the app</a>
+          <a class="action ghost" id="backHomeLink" href="/">Back home</a>
+        </div>
+
+        <p class="link-note" id="linkNote">
+          This page is the fallback for app links on devices that do not open the app automatically.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/site.js" defer></script>
+</body>
+</html>
