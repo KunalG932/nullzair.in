@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kunal Gaikwad - Full Stack Developer | MCA Student">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Kunal Gaikwad | Full Stack Developer">
+    <meta property="og:description" content="Portfolio of Kunal Gaikwad - Full Stack Developer &amp; MCA Student. Explore my projects, skills, and experience.">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:image" content="Add your banner image URL here"> -->
+
+    <title>Kunal Gaikwad | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700;800;900&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <!-- Motion+ Multi-Color Angled Wipe Curtain Reveal (angle: 12deg, direction: right) -->
+    <div class="motion-curtains" id="motionCurtains" aria-hidden="true">
+        <!-- Layer 1: Deep Obsidian Front Sheet -->
+        <div class="curtain-sheet curtain-sheet-1"></div>
+        <!-- Layer 2: Electric Indigo Tech Accent Sheet -->
+        <div class="curtain-sheet curtain-sheet-2"></div>
+        <!-- Layer 3: Vibrant Rose / Pink Accent Sheet -->
+        <div class="curtain-sheet curtain-sheet-3"></div>
+        <!-- Layer 4: Deep Charcoal Base Sheet -->
+        <div class="curtain-sheet curtain-sheet-4"></div>
+    </div>
+
+    <!-- Navigation - Floating Architectural Capsule -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Left: Brand -->
+            <div class="nav-left">
+                <a href="#home" class="logo">
+                    <span class="logo-name">Kunal Gaikwad</span>
+                </a>
+            </div>
+
+            <!-- Center: Kinetic Navigation Links with Sliding Pill -->
+            <div class="nav-center">
+                <ul class="nav-links-desktop">
+                    <div class="nav-indicator-pill"></div>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right: Direct Actions & Mobile Toggle -->
+            <div class="nav-right-actions">
+                <a href="KunalGaikwadResume.pdf" target="_blank" class="nav-resume-btn" data-magnet="0.28" title="View Resume">
+                    <span>Resume</span>
+                    <svg class="nav-btn-icon" width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="nav-talk-btn" data-magnet="0.28">
+                    <span>Let's Talk</span>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Full-screen Mobile Overlay Menu -->
+    <div class="nav-menu" id="mobileNavMenu">
+        <div class="menu-overlay-content">
+            <div class="menu-nav-body">
+                <!-- Clean Architectural Mobile Links -->
+                <ul class="menu-links">
+                    <li class="menu-link-item">
+                        <a href="#home" class="mobile-nav-link">
+                            <span class="menu-link-num">01</span>
+                            <span class="menu-link-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="menu-link-item">
+                        <a href="#about" class="mobile-nav-link">
+                            <span class="menu-link-num">02</span>
+                            <span class="menu-link-text">About</span>
+                        </a>
+                    </li>
+                    <li class="menu-link-item">
+                        <a href="#skills" class="mobile-nav-link">
+                            <span class="menu-link-num">03</span>
+                            <span class="menu-link-text">Skills</span>
+                        </a>
+                    </li>
+                    <li class="menu-link-item">
+                        <a href="#projects" class="mobile-nav-link">
+                            <span class="menu-link-num">04</span>
+                            <span class="menu-link-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="menu-link-item">
+                        <a href="#education" class="mobile-nav-link">
+                            <span class="menu-link-num">05</span>
+                            <span class="menu-link-text">Education</span>
+                        </a>
+                    </li>
+                    <li class="menu-link-item">
+                        <a href="#contact" class="mobile-nav-link">
+                            <span class="menu-link-num">06</span>
+                            <span class="menu-link-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Actions -->
+                <div class="menu-actions">
+                    <a href="#contact" class="btn-menu-talk" data-magnet="0.2">
+                        <span>Let's Connect</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                    <a href="KunalGaikwadResume.pdf" target="_blank" class="btn-menu-resume" data-magnet="0.2">
+                        <span>View Resume</span>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </a>
+                </div>
+
+                <!-- Footer Details -->
+                <div class="menu-footer">
+                    <div class="menu-status-wrap">
+                        <span class="menu-status-dot"></span>
+                        <span class="menu-status-text">Available for work • Pune, IN</span>
+                    </div>
+                    <div class="menu-social-icons">
+                        <a href="mailto:kunalgaikwad9322@gmail.com" class="social-circle" title="Email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/coolnano/" target="_blank" class="social-circle" title="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-grid-pattern"></div>
+
+        <!-- Vertical text left side -->
+        <div class="hero-vertical-text left">Full Stack Developer</div>
+        <div class="hero-year left">2026</div>
+
+        <!-- Location & Time right side -->
+        <div class="hero-location-time">
+            <span class="location-label">Pune, IN</span>
+            <span id="hero-clock">00:00:00</span>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Stats row -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-num">+10</span>
+                        <span class="stat-text">Projects completed</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-num">+5</span>
+                        <span class="stat-text">Technologies</span>
+                    </div>
+                </div>
+
+                <!-- Main heading with dynamic rolling multilingual greetings -->
+                <h1 class="hero-title" id="heroTitle">
+                    <span class="hero-greeting-reel" id="heroGreetingReel">
+                        <span class="greeting-text greeting-en active">Hello</span>
+                    </span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="hero-subtitle">-- I'm Kunal, a Full Stack Developer</p>
+
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator">
+                    <span>Scroll down</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Hero image -->
+            <div class="hero-image-container">
+                <div class="hero-image-frame">
+                    <img src="hero-image.png" alt="Kunal Gaikwad - Full Stack Developer" class="hero-portrait">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <span class="marquee-text">OPEN FOR WORK — FULL STACK DEVELOPER — AVAILABLE FOR FREELANCE — </span>
+            <span class="marquee-text">OPEN FOR WORK — FULL STACK DEVELOPER — AVAILABLE FOR FREELANCE — </span>
+            <span class="marquee-text">OPEN FOR WORK — FULL STACK DEVELOPER — AVAILABLE FOR FREELANCE — </span>
+            <span class="marquee-text">OPEN FOR WORK — FULL STACK DEVELOPER — AVAILABLE FOR FREELANCE — </span>
+        </div>
+    </div>
+
+    <!-- About Me Section - Editorial Style -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="section-header">
+                <span class="section-tag" data-decrypt>Who I Am</span>
+                <h2 class="section-title" data-decrypt>About Me</h2>
+            </div>
+            
+            <div class="about-editorial-content">
+                <h3 class="about-lead-text">
+                    Bridging the gap between software engineering and thoughtful design. An MCA candidate and Full Stack Developer focused on architecting resilient web applications, modern interfaces, and intelligent backend systems.
+                </h3>
+                
+                <div class="about-story-paragraphs">
+                    <p class="about-paragraph">
+                        With a solid foundation in Computer Science from Dr. D.Y. Patil College and currently pursuing my Master of Computer Applications (MCA) at APCOER (SPPU), I combine technical rigor with a strong eye for design aesthetics. My toolkit spans Python backend engineering, modern JavaScript (React &amp; ES6+), scalable database design, and tactile user interface craftsmanship.
+                    </p>
+                    <p class="about-paragraph">
+                        I am passionate about turning complex problems into intuitive, high-performance digital products — from AI/ML tools and fintech platforms to fluid editorial web experiences. Driven by clean code architecture, accessibility, and smooth kinetic interactions.
+                    </p>
+                </div>
+
+                <div class="about-stats-grid">
+                    <div class="about-stat-item" data-spotlight>
+                        <span class="stat-label">Current Degree</span>
+                        <span class="stat-value">MCA (First Year)</span>
+                        <span class="stat-sub">APCOER, Parvati, Pune • SPPU</span>
+                    </div>
+                    <div class="about-stat-item" data-spotlight>
+                        <span class="stat-label">Focus</span>
+                        <span class="stat-value">Full Stack Dev</span>
+                        <span class="stat-sub">AI/ML &amp; Modern Web Systems</span>
+                    </div>
+                    <div class="about-stat-item" data-spotlight>
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value">Open for Work</span>
+                        <span class="stat-sub">Available for Freelance &amp; Internships</span>
+                    </div>
+                </div>
+
+                <!-- Education Editorial List - No Box Containers -->
+                <div class="education-editorial">
+                    <div class="education-section-header">
+                        <span class="section-tag" data-decrypt>Academic Background</span>
+                        <h4 class="education-heading" data-decrypt>Education</h4>
+                    </div>
+
+                    <!-- Row 01 -->
+                    <div class="edu-row" data-spotlight>
+                        <div class="edu-row-main">
+                            <span class="edu-num">01</span>
+                            <div class="edu-info">
+                                <h5 class="edu-degree-name">Master of Computer Applications (MCA)</h5>
+                                <p class="edu-institution">APCOER — Anantrao Pawar College of Engineering &amp; Research, Parvati, Pune</p>
+                                <span class="edu-meta-sub">Savitribai Phule Pune University (SPPU)</span>
+                            </div>
+                        </div>
+                        <div class="edu-row-side">
+                            <span class="edu-year-label">2026 – Present</span>
+                            <span class="edu-status-tag">First Year (FY) • Pursuing</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 02 -->
+                    <div class="edu-row" data-spotlight>
+                        <div class="edu-row-main">
+                            <span class="edu-num">02</span>
+                            <div class="edu-info">
+                                <h5 class="edu-degree-name">B.Sc. in Computer Science</h5>
+                                <p class="edu-institution">Dr. D.Y. Patil College of Science &amp; Computer Science, Akurdi, Pune</p>
+                                <span class="edu-meta-sub">Savitribai Phule Pune University (SPPU)</span>
+                            </div>
+                        </div>
+                        <div class="edu-row-side">
+                            <span class="edu-year-label">2023 – 2026</span>
+                            <span class="edu-status-tag">Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 03 -->
+                    <div class="edu-row" data-spotlight>
+                        <div class="edu-row-main">
+                            <span class="edu-num">03</span>
+                            <div class="edu-info">
+                                <h5 class="edu-degree-name">Higher Secondary Certificate (12th Grade - HSC)</h5>
+                                <p class="edu-institution">Kai Sant Haribhau Anandrav Ghadge Patil Secondary &amp; Higher Secondary College</p>
+                                <span class="edu-meta-sub">Maharashtra State Board • Science Stream</span>
+                            </div>
+                        </div>
+                        <div class="edu-row-side">
+                            <span class="edu-year-label">2022 – 2023</span>
+                            <span class="edu-status-tag">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="skills-container">
+            <div class="section-header">
+                <span class="section-tag" data-decrypt>What I Know</span>
+                <h2 class="section-title" data-decrypt>Technical Skills</h2>
+            </div>
+            <div class="skills-editorial">
+                <!-- Category 01 -->
+                <div class="skill-row" data-spotlight>
+                    <div class="skill-header">
+                        <span class="skill-num">01</span>
+                        <h3 class="skill-name">Programming</h3>
+                    </div>
+                    <div class="skill-list-inline">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">JavaScript</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">PHP</span>
+                    </div>
+                </div>
+
+                <!-- Category 02 -->
+                <div class="skill-row" data-spotlight>
+                    <div class="skill-header">
+                        <span class="skill-num">02</span>
+                        <h3 class="skill-name">Web Dev</h3>
+                    </div>
+                    <div class="skill-list-inline">
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">React Native</span>
+                        <span class="skill-pill">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Category 03 -->
+                <div class="skill-row" data-spotlight>
+                    <div class="skill-header">
+                        <span class="skill-num">03</span>
+                        <h3 class="skill-name">Databases</h3>
+                    </div>
+                    <div class="skill-list-inline">
+                        <span class="skill-pill">MongoDB</span>
+                        <span class="skill-pill">Firebase</span>
+                        <span class="skill-pill">SQLite</span>
+                    </div>
+                </div>
+
+                <!-- Category 04 -->
+                <div class="skill-row" data-spotlight>
+                    <div class="skill-header">
+                        <span class="skill-num">04</span>
+                        <h3 class="skill-name">Tools</h3>
+                    </div>
+                    <div class="skill-list-inline">
+                        <span class="skill-pill">Git & GitHub</span>
+                        <span class="skill-pill">VS Code</span>
+                        <span class="skill-pill">Android Studio</span>
+                        <span class="skill-pill">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section - Editorial Style -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <div class="section-header">
+                <span class="section-tag" data-decrypt>Portfolio</span>
+                <h2 class="section-title" data-decrypt>Selected Works</h2>
+            </div>
+            
+            <div class="projects-editorial">
+                <!-- Project 01 -->
+                <div class="project-row" data-project="1" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">01</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Web Platform • High Traffic</span>
+                            <h3 class="project-title" data-decrypt-hover>Novel Constellation</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A high-traffic web novel platform featuring online reading, daily chapter updates, library bookmarking, and an optimized mobile reading interface.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">Web Platform</span>
+                            <span class="tech-pill">Full Stack</span>
+                            <span class="tech-pill">Responsive UI</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://novel-constellation.com/" target="_blank" class="project-action-link" title="Visit Novel Constellation">
+                            <span class="action-label">Live Site</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="project-row" data-project="2" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">02</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Mobile App • Social Platform</span>
+                            <h3 class="project-title" data-decrypt-hover>Reddit Clone</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A full-stack mobile social media platform built with React Native and Python, featuring real-time subreddit discussions, voting systems, and complex nested comment threads with MongoDB.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">React Native</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://github.com/KunalG932/Reddit-Clone" target="_blank" class="project-action-link" title="View Source on GitHub">
+                            <span class="action-label">Source Code</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="project-row" data-project="3" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">03</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Mobile App • Campus Utility</span>
+                            <h3 class="project-title" data-decrypt-hover>Campus Find</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A smart mobile application designed for campus communities, allowing users to report lost items and helping others find and return them through real-time notifications and location tracking.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">React Native</span>
+                            <span class="tech-pill">Firebase</span>
+                            <span class="tech-pill">Google Maps API</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://github.com/KunalG932/LostFound" target="_blank" class="project-action-link" title="View Source on GitHub">
+                            <span class="action-label">Source Code</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 04 -->
+                <div class="project-row" data-project="4" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">04</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Automation • Scraper &amp; Bot</span>
+                            <h3 class="project-title" data-decrypt-hover>MangaTracker Bot</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A high-performance automated system for tracking manga releases across 70+ sources, featuring automatic downloads and mirroring to Telegram channels with advanced scraping logic.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Telegram API</span>
+                            <span class="tech-pill">Web Scraping</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://github.com/KunalG932/auto-manga-chapter-update-bot" target="_blank" class="project-action-link" title="View Source on GitHub">
+                            <span class="action-label">Source Code</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 05 -->
+                <div class="project-row" data-project="5" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">05</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Web App • Academic Platform</span>
+                            <h3 class="project-title" data-decrypt-hover>Engi-Notes</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A collaborative academic platform designed for engineering students to share, access, and organize lecture notes and resources efficiently.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">MongoDB</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://engi-notes.vercel.app/" target="_blank" class="project-action-link" title="Visit Engi-Notes">
+                            <span class="action-label">Live Demo</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 06 -->
+                <div class="project-row" data-project="6" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">06</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Multiplayer Game • Real-Time</span>
+                            <h3 class="project-title" data-decrypt-hover>Scribbly</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            An interactive multiplayer draw-and-guess game bot for Telegram, featuring real-time synchronization, live canvas handling, and instant scoring systems.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Telegram API</span>
+                            <span class="tech-pill">WebSockets</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <span class="project-action-link disabled" title="Project in Development">
+                            <span class="action-label">Coming Soon</span>
+                            <div class="action-circle-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 07 -->
+                <div class="project-row" data-project="7" data-spotlight>
+                    <div class="project-left-col">
+                        <span class="project-num">07</span>
+                        <div class="project-title-meta">
+                            <span class="project-category">Portfolio • Web Experience</span>
+                            <h3 class="project-title" data-decrypt-hover>nullzair.in</h3>
+                        </div>
+                    </div>
+                    <div class="project-mid-col">
+                        <p class="project-desc">
+                            A modern, responsive personal portfolio website featuring kinetic typography, smooth scroll architecture, and an editorial dark-noise design system.
+                        </p>
+                        <div class="project-pills">
+                            <span class="tech-pill">HTML5 / CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">Lenis Scroll</span>
+                        </div>
+                    </div>
+                    <div class="project-right-col">
+                        <a href="https://nullzair.in" target="_blank" class="project-action-link" title="Current Site">
+                            <span class="action-label">Live Site</span>
+                            <div class="action-circle-icon" data-magnet="0.35">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Let's Build Something Amazing Together!</h2>
+            <p class="cta-description">
+                I'm always excited to collaborate on new projects or open-source contributions. Whether you have an idea
+                or want to chat about tech, let's connect!
+            </p>
+            <a href="mailto:kunalgaikwad9322@gmail.com" class="cta-btn" data-magnet="0.25">
+                <span>Get In Touch</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="footer-new-container">
+            <div class="footer-socials">
+                <a href="https://github.com/KunalG932" target="_blank" class="footer-social-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/coolnano/" target="_blank" class="footer-social-link">LinkedIn</a>
+                <a href="https://instagram.com/ig.kunalgaikwad" target="_blank" class="footer-social-link">Instagram</a>
+            </div>
+            <div class="footer-brand">
+                KUNAL GAIKWAD
+            </div>
+            <div class="footer-email">
+                <a href="mailto:kunalgaikwad9322@gmail.com">kunalgaikwad9322@gmail.com</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; <span id="copyright-year">2025</span> Kunal Gaikwad. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" data-magnet="0.35" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <!-- React Bits: ClickSpark Particle Canvas -->
+    <canvas id="clickSparkCanvas" class="click-spark-canvas"></canvas>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
